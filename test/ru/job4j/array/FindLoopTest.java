@@ -64,7 +64,7 @@ public class FindLoopTest {
     }
 
     @Test
-    public void whenDontFind555At() {
+        public void whenDontFind555At() {
         int[] input = new int[] {1, 2, 45, 90, 7, 3, 78, 34, 10, 12, 76, 45, 23, 3};
         int value = 555;
         int start = 3;
@@ -72,6 +72,4 @@ public class FindLoopTest {
         int result = FindLoop.indexOf(input, value, start, finish);
         assertThat(result, is(-1));
     }
-
-
 }
