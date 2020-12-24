@@ -10,9 +10,14 @@ public class Square {
     }
 
     public static void main(String[] args) {
-        int[] array = calculate(4);
-        for (int index : array) {
+        int[] array = calculate(6);
+        /*for (int index : array) {
             System.out.println(index);
+        }*/
+        System.out.println("Out only even: ");
+        System.out.println(array[0]);
+        for (int index = 2; index < array.length; index += 2) {
+            System.out.println(array[index]);
         }
     }
 }
