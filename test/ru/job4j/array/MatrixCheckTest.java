@@ -6,7 +6,7 @@ import static org.junit.Assert.assertThat;
 
 public class MatrixCheckTest {
 
-    //_____________________________/* HORIZONTAL TEST*/____________________________________
+    //_____________________________/* HORIZONTAL TESTS*/____________________________________
 
     @Test
     public void monoHorizontalHasAt1() {
@@ -30,7 +30,7 @@ public class MatrixCheckTest {
         assertThat(true, is(out));
     }
 
-    //_____________________________/* VERTICAL TEST*/____________________________________
+    //_____________________________/* VERTICAL TESTS*/____________________________________
     @Test
     public void whenHasMonoVerticalHasAt2() {
         char[][] input = {
@@ -65,5 +65,45 @@ public class MatrixCheckTest {
         char[] result = MatrixCheck.extractDiagonal(input);
         char[] expect = {'X', 'X', 'X'};
         assertThat(result, is(expect));
+    }
+    //_____________________________/* SIKOBAN TESTS*/____________________________________
+
+    @Test
+    public void whenDataMonoByTrueThenTrue() {
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenDataNotMonoByTrueThenFalse() {
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenDataHMonoByTrueThenTrue() {
+        char[][] input = {
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result, is(true));
     }
 }
