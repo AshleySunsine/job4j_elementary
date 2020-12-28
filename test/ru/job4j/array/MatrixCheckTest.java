@@ -27,4 +27,28 @@ public class MatrixCheckTest {
         boolean out = MatrixCheck.monoHorizontal(input, 2);
         assertThat(true, is(out));
     }
+
+    //_____________________________/* VERTICAL TEST*/____________________________________
+    @Test
+    public void whenHasMonoVerticalHasAt2() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        boolean result = MatrixCheck.monoVertical(input, 2);
+        assertThat(result, is(true));
+
+    }
+
+    @Test
+    public void whenHasMonoVerticalHasAt1() {
+        char[][] input = {
+                {'e', 'X', 'X'},
+                {'y', 'X', '0'},
+                {'X', 'X', 'X'},
+        };
+        boolean result = MatrixCheck.monoVertical(input, 1);
+        assertThat(result, is(true));
+    }
 }
