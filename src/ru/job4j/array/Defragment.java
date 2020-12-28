@@ -15,7 +15,11 @@ public class Defragment {
                     }
                 }
             }
-            System.out.print(array[indexNull] + " ");
+            System.out.println();
+            for (String line : array) {
+                System.out.print(line + " ");
+            }
+
         }
         return array;
     }
@@ -28,7 +32,7 @@ public class Defragment {
     }
 
     public static void main(String[] args) {
-        String[] input = {"I", null, "wanna", null, "be", null, "compressed"};
+        String[] input = {null, "Two", null, "tiny", "tigers", null, "take", "the", null, "taxi", "to", "town"};
         String[] compressed = compress(input);
         System.out.println();
         for (String line : compressed) {
