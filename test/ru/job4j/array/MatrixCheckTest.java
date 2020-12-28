@@ -6,6 +6,8 @@ import static org.junit.Assert.assertThat;
 
 public class MatrixCheckTest {
 
+    //_____________________________/* HORIZONTAL TEST*/____________________________________
+
     @Test
     public void monoHorizontalHasAt1() {
         char[][] input = {
@@ -50,5 +52,18 @@ public class MatrixCheckTest {
         };
         boolean result = MatrixCheck.monoVertical(input, 1);
         assertThat(result, is(true));
+    }
+    //_____________________________/* Diagonal TEST*/____________________________________
+
+    @Test
+    public void extractDiagonal() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {' ', 'X', ' '},
+                {' ', ' ', 'X'},
+        };
+        char[] result = MatrixCheck.extractDiagonal(input);
+        char[] expect = {'X', 'X', 'X'};
+        assertThat(result, is(expect));
     }
 }
