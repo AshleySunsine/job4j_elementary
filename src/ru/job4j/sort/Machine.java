@@ -10,19 +10,12 @@ public class Machine {
         int size = 0;
         for (int num : coins) {
             for (int index = 0; index < rsl.length; index++) {
-                if ((sdacha - num) < 0) {
-                    size = size + index;
-                    break;
-                } else if ((sdacha - num) > 0) {
-                    rsl[size + index] = num;
-                    sdacha = sdacha - num;
-                } else if ((sdacha - num) == 0) {
-                    rsl[size + index] = num;
+                while (sdacha - num >= 0) {
+                    rsl[size++] = num;
                     sdacha = sdacha - num;
                 }
             }
         }
-
         return Arrays.copyOf(rsl, size);
     }
 }
