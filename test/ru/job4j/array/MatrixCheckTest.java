@@ -66,7 +66,7 @@ public class MatrixCheckTest {
         char[] expect = {'X', 'X', 'X'};
         assertThat(result, is(expect));
     }
-    //_____________________________/* SIKOBAN TESTS*/____________________________________
+    //_____________________________/* SOKOBAN TESTS*/____________________________________
 
     @Test
     public void whenDataMonoByTrueThenTrue() {
