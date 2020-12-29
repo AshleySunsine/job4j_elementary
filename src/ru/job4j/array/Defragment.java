@@ -4,14 +4,10 @@ public class Defragment {
     public static String[] compress(String[] array) {
         for (int indexNull = 0; indexNull < array.length; indexNull++) {
             if (array[indexNull] == null) {
-                /*В наших курсах мы не используем обратную проходку по массиву.
-                Я помню. Но здесь она нужна!
-                 */
-
-                /* Warning! REVERSE driving through the array!!! */
-                for (int notNullIndex = array.length - 1; notNullIndex != indexNull; notNullIndex--) {
+                for (int notNullIndex = indexNull; notNullIndex < array.length; notNullIndex++) {
                     if (array[notNullIndex] != null) {
                         Defragment.swap(array, indexNull, notNullIndex);
+                        break;
                     }
                 }
             }
