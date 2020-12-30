@@ -9,13 +9,11 @@ public class Machine {
         int sdacha = money - price;
         int size = 0;
         for (int num : coins) {
-            for (int index = 0; index < rsl.length; index++) {
                 while (sdacha - num >= 0) {
                     rsl[size++] = num;
                     sdacha = sdacha - num;
                 }
-            }
-        }
+                    }
         return Arrays.copyOf(rsl, size);
     }
 }
