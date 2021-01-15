@@ -43,4 +43,13 @@ public class PointTest {
         Assert.assertEquals(expected, out, 0.1);
     }
 
+    @Test
+    public void when888To138Then35() {
+        double expected = 8.6;
+        Point a = new Point(8, 8, 8);
+        Point b = new Point(1, 3, 8);
+        double out = a.distance3d(b);
+        Assert.assertEquals(expected, out, 0.1);
+    }
+
 }
